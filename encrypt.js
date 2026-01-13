@@ -16,11 +16,6 @@ function encryptByAES(message, key) {
     return CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
 }
 
-// transferKey = "u2oh6Vu^HWe4_AES"
-// pwd = encryptByAES("PN1234567", transferKey)
-// phone = encryptByAES("15542504095", transferKey)
-// console.log(phone)
-// console.log(pwd)
 
 function get_uname_password(uname ,password){
     data = {}
@@ -32,4 +27,4 @@ function get_uname_password(uname ,password){
     return data
 }
 
-console.log(get_uname_password('15542504095','PN1234567'))
+
