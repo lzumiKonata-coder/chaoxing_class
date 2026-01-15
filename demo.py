@@ -537,8 +537,8 @@ def main(clazzid, courseid, chapterid, personid, cookies,interval):
                 else:
                     playingtime = duration
 
-        finish += 1
-        print(f'已完成任务点数:{finish}')
+            finish += 1
+            print(f'已完成任务点数:{finish}')
 
 
 # uname =input('请输入账号:')
@@ -567,6 +567,7 @@ interval = 30    #视频提交间隔（建议30到60）
 
 for chapterid in chapterids:
     main(clazzid, courseid, chapterid, personid, cookies,interval)
+
 
 
 
