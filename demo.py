@@ -532,6 +532,9 @@ def main(clazzid, courseid, chapterid, personid, cookies,interval):
                     headers=headers,
                 )
                 print(response.text)
+                content = json.loads(response.text)
+                if content['isPassed'] == True:
+                    break
                 time.sleep(interval-3)
                 if playingtime + interval <= duration:
                     playingtime += interval
@@ -568,6 +571,7 @@ interval = 30    #视频提交间隔（建议30到60）
 
 for chapterid in chapterids:
     main(clazzid, courseid, chapterid, personid, cookies,interval)
+
 
 
 
