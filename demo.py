@@ -437,7 +437,7 @@ def get_dtoken(cookies, v,objectid):
 
 #提交视频进度
 def main(clazzid, courseid, chapterid, personid, cookies,interval):
-    global finish
+    # global finish
     cards_v = get_cards_v(cookies, courseid, clazzid, chapterid)
 
     headers = {
@@ -485,6 +485,7 @@ def main(clazzid, courseid, chapterid, personid, cookies,interval):
     datas = json.loads(mArg[1])
     datas = datas['attachments']
     # print(datas)
+    print(f'当前任务章节:{chapterid}')
     for data in datas:
         if data['type'] =='video':
             # print(data)
@@ -537,8 +538,8 @@ def main(clazzid, courseid, chapterid, personid, cookies,interval):
                 else:
                     playingtime = duration
 
-            finish += 1
-            print(f'已完成任务点数:{finish}')
+            # finish += 1
+            # print(f'已完成任务点数:{finish}')
 
 
 # uname =input('请输入账号:')
@@ -567,6 +568,7 @@ interval = 30    #视频提交间隔（建议30到60）
 
 for chapterid in chapterids:
     main(clazzid, courseid, chapterid, personid, cookies,interval)
+
 
 
 
